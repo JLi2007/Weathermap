@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "es6",
+    "outDir": "./build",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["es2015", "dom"],
+    "allowUmdGlobalAccess": true,
+    // "allowImportingTsExtensions": true,
+  },
+  "types": ["node", "express"],
+  "include": [
+    "**/*.ts",
+  ],
+  "exclude": ["node_modules"]
+}
