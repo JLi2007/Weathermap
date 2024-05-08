@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Carme&family=Cutive&family=Poppins&family=Source+Code+Pro:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+#all{
+    width: 100vw;
+    height: 100vh;
+    background: url(../public/Weather.jpg);
+    overflow: hidden;
+}
+
+#top{
+    height: 50%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(240, 248, 255, 0.75);
+    border: 5px solid rgb(138, 198, 250);
+    width: 100vw;
+    padding: 4% 26.7%;
+}
+
+.container h1{
+    font-size: 5rem;
+    letter-spacing: 0.05cm;
+    display: flex;
+    justify-content: center;
+}
+
+.container h4{
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    width: 45vh;
+    height: 3vh;
+    padding: 14px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid aliceblue;
+    font-family: inherit;
+    outline: none;
+    box-shadow: 2px 2px 5px rgb(138, 198, 250);
+    margin-top: 10px;
+    transition: 0.2s ease-out;
+}
+
+input:focus{
+    transform: scale(1.05);
+}
+
+select{
+    width: 30vh;
+    height: auto;
+    padding: 14px;
+    border: 1px solid aliceblue;
+    font-family: inherit;
+    outline: none;
+    box-shadow: 2px 2px 5px rgb(138, 198, 250);
+    margin-top: 10px;
+    transition: 0.3s ease-out;
+}
+
+select:focus{
+    filter: brightness(97%);
+}
+
+#submit{
+    height: auto;
+    padding: 14px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid aliceblue;
+    background-color: white;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 2px 3px 5px rgb(138, 198, 250);
+    transition: 0.3s ease-out;
+}
+
+#submit:hover{
+    color: rgb(138, 198, 250);
+    background-color: aliceblue;
+    border: rgb(138, 198, 250);
+    transform: scale(1.05);
+}
+
+#bottom{
+    height: 50%;
+}
+
+#top, #bottom{
+    background: rgba(240, 248, 255, 0.75);
+}
+
+/* LEAFLET MAP--------------------------------------------------------------------------------------- */
+
+#map{
+    height: 100%;
+    width: 100%;
+}

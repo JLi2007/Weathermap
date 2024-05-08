@@ -1,6 +1,20 @@
+import React from 'react'
+import Main from './components/Main'
+import Map from './components/Map'
+import Weather from './components/Weather'
+import './style/style.css'
+
 function App() {
   return(
-    <h1>Hello World</h1>
+    <div id="all">
+      <div id="top">
+        <Main />
+      </div>
+      <div id="bottom">
+        <Map />
+        <Weather />
+      </div>
+    </div>
   )
 }
 

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +14,12 @@
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "leaflet": "^1.9.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/leaflet": "^1.9.8"
+    "@types/leaflet": "^1.9.12"
   }
 }
