@@ -26,6 +26,7 @@
     border: 5px solid rgb(138, 198, 250);
     width: 100vw;
     padding: 4% 26.7%;
+    height: 100%;
 }
 
 .container h1{
@@ -95,7 +96,10 @@ select:focus{
 }
 
 #bottom{
-    height: 50%;
+    height: 100%;
+    border-left: 5px solid rgb(138, 198, 250);
+    border-right: 5px solid rgb(138, 198, 250);
+    border-bottom: 5px solid rgb(138, 198, 250);
 }
 
 #top, #bottom{
@@ -106,5 +110,6 @@ select:focus{
 
 #map{
     height: 100%;
-    width: 100%;
+    width: 50%;
+    border-right: 5px solid rgb(138, 198, 250);
 }

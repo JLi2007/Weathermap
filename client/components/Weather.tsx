@@ -1,9 +1,10 @@
 import React from 'react';
 
 function Weather(){
+    
     return(
         <div>
-            <h1>Hello World this is weather</h1>
+            <h1 id='output'>No Data</h1>
         </div>
     )
 }
