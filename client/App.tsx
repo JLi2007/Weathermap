@@ -11,8 +11,8 @@ function App() {
         <Main />
       </div>
       <div id="bottom">
-        <Map />
         <Weather />
+        <Map />
       </div>
     </div>
   )

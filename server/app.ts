@@ -1,6 +1,7 @@
 import express, {Request, Response} from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config();
 
 // import{connectToMongo, closeMongo,insertData} from './Mongo'
@@ -8,6 +9,7 @@ dotenv.config();
 const app = express();
 const port = 4000;
 
+app.use(cors());
 app.use(express.static('../client'));
 app.use(express.json({limit: '2mb'}));
 
