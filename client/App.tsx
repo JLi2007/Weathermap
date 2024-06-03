@@ -10,6 +10,7 @@ function App() {
       <div id="top">
         <Main />
       </div>
+      
       <div id="bottom">
         <Weather />
         <Map />

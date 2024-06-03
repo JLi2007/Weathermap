@@ -1,10 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import countries from '../countries';
-import Map from './Map'
+
+import { mapContext }  from './contexts/Context';
+import Weather from './Weather';
 
 function Main(){
 
-    const [markerPosition, setMarkerPositiion] = useState({ lat: 0.00, lon: 0.00 })
     async function handleClick(e){
         e.preventDefault();
 
@@ -97,20 +98,16 @@ function Main(){
             output.innerHTML = '';
             output.appendChild(roots);
         }
-
     }
+    const [markerPosition, newMarkerPosition] = useState([0.00, 0.00]);
 
     function ObtainCoords(data:any){
         const lat: number = data.lat;
         const lon: number = data.lon;
         console.log('obtained coords:', lat, lon);
-        newLatLon(lat,lon);
+        newMarkerPosition([lat,lon]);
     }
 
-    function newLatLon(lat:number,lon:number){
-        setMarkerPositiion({lat,lon})
-    }
-    
     useEffect(() => {
         const select: HTMLSelectElement | null = document.querySelector("#country");
         if (select) {
@@ -136,6 +133,9 @@ function Main(){
                 </div>
             </form>
         </div>
+        <mapContext.Provider value={{markerPosition}}>
+            <Weather />
+        </mapContext.Provider>
         </>
     )
 }
