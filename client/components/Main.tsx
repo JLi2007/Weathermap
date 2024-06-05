@@ -1,8 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import countries from '../countries';
-
-import { mapContext }  from './contexts/Context';
 import Weather from './Weather';
+import Map from './Map';
 
 function Main(){
 
@@ -64,6 +63,7 @@ function Main(){
 
         const city: HTMLHeadingElement = document.createElement('h1');
         const flag: HTMLImageElement = document.createElement('img');
+        const flag2: HTMLImageElement = document.createElement('img');
         const temp: HTMLHeadingElement = document.createElement('h1');
         const main: HTMLHeadingElement = document.createElement('h2');
         const icon: HTMLImageElement = document.createElement('img');
@@ -76,6 +76,7 @@ function Main(){
         temp.textContent = `Temperature : ${data.main.temp} °C`;
         if (countryID !== "QS") {
             flag.src = `https://flagsapi.com/${countryID}/shiny/64.png`;
+            flag2.src = `https://flagsapi.com/${countryID}/shiny/64.png`;
         }
         main.textContent = `${data.weather[0].main} ⟶ ${data.weather[0].description}`;
         icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
@@ -83,6 +84,7 @@ function Main(){
     
         city.classList.add('city-class');
         flag.classList.add('flag-class');
+        flag2.classList.add('flag-class');
         temp.classList.add('temp-class');
         main.classList.add('main-class');
         icon.classList.add('icon-class');
@@ -91,7 +93,7 @@ function Main(){
         cityContainer.classList.add('city-container');
         mainContainer.classList.add('main-container');
 
-        cityContainer.append(flag, city);
+        cityContainer.append(flag, city, flag2);
         mainContainer.append(temp, main, minmax);
         roots.append(cityContainer, mainContainer, icon);
         if (output) {
@@ -121,22 +123,28 @@ function Main(){
     }, []); // Empty dependency array means the effect runs only once on mount
     
     return(
-        <>
-        <div className='container'> 
-            <form action="">
-                <h1>🌦️ WeatherMap 🗺️</h1><br/>
-                <h4>Enter a city and the weather + location will be displayed!</h4>
-                <div className="user-input">
-                    <input type="text" id="inputs" placeholder="Enter a City Here" name="cityID"/>
-                    <select id="country"></select>
-                    <button id="submit" onClick={handleClick}>Submit</button>
+        <div id="all">
+
+            <div id="top">
+                <div className='container'> 
+                <form action="">
+                    <h1>🌦️ WeatherMap 🗺️</h1><br/>
+                    <h4>Enter a city and the weather + location will be displayed!</h4>
+                    <div className="user-input">
+                        <input type="text" id="inputs" placeholder="Enter a City Here" name="cityID"/>
+                        <select id="country"></select>
+                        <button id="submit" onClick={handleClick}>Submit</button>
+                    </div>
+                </form>
                 </div>
-            </form>
-        </div>
-        <mapContext.Provider value={{markerPosition}}>
-            <Weather />
-        </mapContext.Provider>
-        </>
+            </div>
+            
+            <div id="bottom">
+                <Weather />
+                <Map position={markerPosition}/>
+            </div>
+
+      </div>
     )
 }
 
