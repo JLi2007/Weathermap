@@ -83,7 +83,7 @@ function MinimapControl({ position, zoom }) {
 function Zoom({ location, zoom }) {
   const map = useMap();
   map.flyTo(location, zoom, { duration: 1.0 });
-  const popup = location === "00" ? "origin" : location;  
+  const popup = location === "00" ? "origin" : location;
   return (
     <Marker position={location}>
       <Popup>you are here: {popup}</Popup>
