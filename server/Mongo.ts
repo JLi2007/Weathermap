@@ -23,14 +23,14 @@ async function closeMongo(){
     }
 }
 
-async function insertData(data: any){
+async function insertData(data:any){
     try{
         const database = client.db("weatherDatabase");
         let collectionName = ""
         if (data.weather){
-            collectionName = "weatherCollection"
+            collectionName = "reactWeather"
         }else{
-            collectionName = "locationCollection"
+            collectionName = "reactLocation"
         } 
     
         if (collectionName){
@@ -39,10 +39,8 @@ async function insertData(data: any){
             console.log("Inserted data into MONGODB");
 
 
-           const query = {name:"Windsor"};
-           const location = "Milan" //Or whatever city I want to update//delete
-
-           console.log(query, location)
+        //    const query = {name:"Windsor"};
+        //    const location = "Milan" //Or whatever city I want to update//delete
            
         //    const location = await findDocuments(collection,query);
         //    const update = await updateDocuments(collection, location);

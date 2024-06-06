@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 dotenv.config();
 
-// import{connectToMongo, closeMongo,insertData} from './Mongo'
+import{connectToMongo, closeMongo,insertData} from './Mongo'
 
 const app = express();
 const port = 4000;
@@ -15,7 +15,7 @@ app.use(express.json({limit: '2mb'}));
 
 app.listen(port, ()=> console.log(`running on port ${port}`));
 
-// connectToMongo().then(()=>{
+connectToMongo().then(()=>{
     app.post('/weather', async(req:Request, res:Response) => {
         console.log('request received!');
         // const data = req.body;
@@ -44,7 +44,8 @@ app.listen(port, ()=> console.log(`running on port ${port}`));
             const response = await axios.get(url);
             const weatherData = response.data;
     
-            // insertData(weatherData)
+            //MongoDB
+            insertData(weatherData)
     
             const successResponse = {success:true, message: "Server received your response", data:{weatherData}};
             return res.json(successResponse);
@@ -69,7 +70,7 @@ app.listen(port, ()=> console.log(`running on port ${port}`));
             const response = await axios.get(url);
             const locationData = response.data;
     
-            // insertData(locationData[0]);
+            insertData(locationData[0]);
     
             const successResponse = {success: true, message: "Server received your location response ...", data:{locationData}}
             return res.json(successResponse);
@@ -78,13 +79,13 @@ app.listen(port, ()=> console.log(`running on port ${port}`));
             return res.status(400).json(errorResponse);
         }
     })
-// }).catch(error => {
-//     console.error("Failed to connect to MongoDB:", error);
-//     process.exit(1); // Exit the process if MongoDB connection fails
-// });
+}).catch(error => {
+    console.error("Failed to connect to MongoDB:", error);
+    process.exit(1); // Exit the process if MongoDB connection fails
+});
 
-// process.on('SIGINT', async()=>{
-//     console.log("SHUTTING DOWN MONGO ...");
-//     await closeMongo();
-//     process.exit(0);
-// })
+process.on('SIGINT', async()=>{
+    console.log("SHUTTING DOWN MONGO ...");
+    await closeMongo();
+    process.exit(0);
+})
