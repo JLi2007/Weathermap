@@ -17,7 +17,9 @@ import iconShadow from './images/marker-shadow.png';
 
 const DefaultIcon = L.icon({
     iconUrl: icon,
-    shadowUrl: iconShadow
+    shadowUrl: iconShadow,
+    iconSize: [25, 40],
+    iconAnchor: [13, 40]
 });
 
 const POSITION_CLASSES = {
