@@ -85,7 +85,7 @@ function Zoom({ location, zoom }) {
   map.flyTo(location, zoom, { duration: 1.0 });
   const popup = location === "00" ? "origin" : location;
   return (
-    <Marker position={location}>
+    <Marker position={location} alt="📍">
       <Popup>you are here: {popup}</Popup>
     </Marker>
   );
