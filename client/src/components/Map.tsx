@@ -10,6 +10,15 @@ import {
 } from "react-leaflet";
 import { useEventHandlers } from "@react-leaflet/core";
 import "leaflet/dist/leaflet.css";
+import L from 'leaflet'
+
+import icon from './images/marker-icon.png';
+import iconShadow from './images/marker-shadow.png';
+
+const DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow
+});
 
 const POSITION_CLASSES = {
   bottomleft: "leaflet-bottom leaflet-left",
@@ -85,7 +94,7 @@ function Zoom({ location, zoom }) {
   map.flyTo(location, zoom, { duration: 1.0 });
   const popup = location === "00" ? "origin" : location;
   return (
-    <Marker position={location} alt="📍">
+    <Marker position={location} alt="📍" icon={DefaultIcon}>
       <Popup>you are here: {popup}</Popup>
     </Marker>
   );
