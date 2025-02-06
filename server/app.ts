@@ -7,12 +7,13 @@ dotenv.config();
 import { connectToMongo, closeMongo, insertData } from "./Mongo";
 
 const app = express();
-const port = 4000;
+const port = 3000;
 
 app.use(cors());
 app.use(express.static("../client"));
 app.use(express.json({ limit: "2mb" }));
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.listen(port, () => console.log(`running on port ${port}`));
 
 connectToMongo()
