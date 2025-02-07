@@ -52,8 +52,8 @@ function MinimapBounds({ parentMap, zoom }) {
   }, [minimap, parentMap, zoom]);
 
   // Listen to events on the parent map
-  const handlers = useMemo(() => ({ move: onChange, zoom: onChange }), []);
-  useEventHandlers({ instance: parentMap }, handlers);
+  // const handlers = useMemo(() => ({ move: onChange, zoom: onChange }), []);
+  useEventHandlers({ instance: parentMap }, { move: onChange, zoom: onChange });
 
   return <Rectangle bounds={bounds} pathOptions={BOUNDS_STYLE} />;
 }
@@ -122,7 +122,7 @@ function Map(props) {
                 </Popup>
             </Marker> */}
 
-      <Zoom location={markerPosition} zoom={7} />
+      <Zoom location={markerPosition} zoom={5} />
       <MinimapControl position="topright" zoom={0} />
     </MapContainer>
   );

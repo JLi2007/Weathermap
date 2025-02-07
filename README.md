@@ -19,11 +19,11 @@ A Node.js project that retrieves real-time weather data for a specified city and
 
 ## Screenshots
 
-![App Screenshot](./client//src/public/demo1.png)
+![App Screenshot](./client/public/demo1.png)
 
-![App Screenshot](./client//src/public/demo2.png)
+![App Screenshot](./client/public/demo2.png)
 
-![App Screenshot](./client//src/public/demo3.png)
+![App Screenshot](./client/public/demo3.png)
 
 ## Run Locally
 

@@ -10,12 +10,14 @@
 #all {
   width: 100vw;
   height: 100vh;
-  background: url(../public/Weather.jpg);
+  background: url(/weather.jpg);
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
-  background: rgba(240, 248, 255, 0.25);
+  background: rgba(197, 223, 247, 0.3);
   border: 5px solid rgb(138, 198, 250);
   height: 100%;
   text-align: center;
@@ -127,19 +129,24 @@ select:focus {
     font-size: 0.6rem;
   }
 }
+@media (max-width: 380px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+}
 /* TOP BOTTOM--------------------------------------------------------------------------------------- */
 
 #top,
 #bottom {
   height: 50%;
-  background: rgba(240, 248, 255, 0.75);
+  background: rgba(216, 232, 246, 0.8);
 }
 
 #bottom {
+  display: flex;
   border-left: 5px solid rgb(138, 198, 250);
   border-right: 5px solid rgb(138, 198, 250);
   border-bottom: 5px solid rgb(138, 198, 250);
-  display: flex;
 }
 
 /* OUTPUT--------------------------------------------------------------------------------------- */
@@ -176,7 +183,9 @@ select:focus {
 }
 
 .output .city-container {
+  border: 1px solid black;
   width: 50vw;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,7 +316,6 @@ select:focus {
     font-size: 2rem;
   }
 }
-
 /* LEAFLET MAP--------------------------------------------------------------------------------------- */
 
 #map {
