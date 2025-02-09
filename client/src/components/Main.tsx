@@ -4,7 +4,7 @@ import Weather from "./Weather";
 import Map from "./Map";
 
 // const localPath = "http://localhost:3000";
-const renderPath = "https://weathermap-vpww.onrender.com";
+const railwayPath = "tsweatherprojectreact-production.up.railway.app";
 
 function Main() {
   async function handleClick(e) {
@@ -30,7 +30,7 @@ function Main() {
       const options2: RequestInit = { ...options };
 
       try {
-        const fetching = await fetch(`${renderPath}/weather`, options);
+        const fetching = await fetch(`${railwayPath}/weather`, options);
         if (!fetching.ok) {
           throw new Error(`HTTP ERROR Status:${fetching.status}`);
         }
@@ -39,7 +39,7 @@ function Main() {
         DisplayWeather(json.data.weatherData);
 
         const fetching2 = await fetch(
-          `${renderPath}/location`,
+          `${railwayPath}/location`,
           options2
         );
         if (!fetching2.ok) {

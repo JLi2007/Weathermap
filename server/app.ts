@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.static("../client"));
 app.use(express.json({ limit: "2mb" }));
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => res.send("Express on Railway, React on Vercel. This is the backend."));
 app.listen(port, () => console.log(`running on port ${port}`));
 
 connectToMongo()
