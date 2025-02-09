@@ -1,5 +1,6 @@
 # Weather Project Part 4: React
-## [Link to Frontend](https://weathermap-git-main-jli2007s-projects.vercel.app/)
+## [Try it!](https://weathermap-git-main-jli2007s-projects.vercel.app/)
+
 A Node.js project that retrieves real-time weather data for a specified city and country, presenting it on an interactive world map.
 
 ## **Features →**
@@ -7,14 +8,13 @@ A Node.js project that retrieves real-time weather data for a specified city and
 * **Global Visualization:** View the selected location on a world map for a geographical perspective. 
 * **User-Friendly:** Simple interface for entering city and country information.
 
-## **Technologies Used**
-* React.js
+## **Stack**
+* React.ts
 * Node.js
-* Express.js
+* Express
 * Leaflet
 * OpenWeatherMap API
 * FlagsAPI
-* Typescript
 * MongoDB
 
 ## Screenshots
