@@ -1,5 +1,5 @@
-# My Weather Project Journey Part 4: React
-## [Link to Frontend](https://weathermap.pages.dev/)
+# Weather Project Part 4: React
+## [Link to Frontend](https://weathermap.jame.li)
 A Node.js project that retrieves real-time weather data for a specified city and country, presenting it on an interactive world map.
 
 ## **Features →**
