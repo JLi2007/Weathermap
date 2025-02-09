@@ -4,7 +4,7 @@ import Weather from "./Weather";
 import Map from "./Map";
 
 // const localPath = "http://localhost:3000";
-const railwayPath = "tsweatherprojectreact-production.up.railway.app";
+const railwayPath = "https://tsweatherprojectreact-production.up.railway.app";
 
 function Main() {
   async function handleClick(e) {
