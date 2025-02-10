@@ -183,7 +183,6 @@ select:focus {
 }
 
 .output .city-container {
-  border: 1px solid black;
   width: 50vw;
   height: 20vh;
   display: flex;
