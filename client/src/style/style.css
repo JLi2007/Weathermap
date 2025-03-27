@@ -16,6 +16,10 @@
   background-position: center;
 }
 
+#inputs, #country, #submit{
+  z-index: 10;
+}
+
 .container {
   background: rgba(197, 223, 247, 0.3);
   border: 5px solid rgb(138, 198, 250);
@@ -313,6 +317,11 @@ select:focus {
 @media (max-width: 470px) {
   .output span {
     font-size: 2rem;
+  }
+}
+@media (max-height: 680px) {
+  .output .icon-class{
+    width: 20vw;
   }
 }
 /* LEAFLET MAP--------------------------------------------------------------------------------------- */
